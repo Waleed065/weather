@@ -4,7 +4,7 @@ interface schema {
 }
 export default function getTemperature({ isCelsius, temp }: schema) {
   return isCelsius
-    ? temp + " °C"
+    ? temp.toFixed(2) + " °C"
     : getFahrenheitFromCelsius(temp);
 }
 
