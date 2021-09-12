@@ -1,0 +1,7 @@
+#sidebar-container{
+    width: 300px;
+    height: 100%;
+    border-right: 1px dashed rgba(0,0,0,0.1);
+    padding: var(--defaultMargin);
+    
+}

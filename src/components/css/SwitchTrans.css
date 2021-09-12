@@ -1,0 +1,23 @@
+/* react transition group */
+
+.convert-arrow-animation-enter .convert-arrow {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.convert-arrow-animation-enter-active .convert-arrow {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.convert-arrow-animation-exit .convert-arrow {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.convert-arrow-animation-exit-active .convert-arrow {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.convert-arrow-animation-enter-active .convert-arrow,
+.convert-arrow-animation-exit-active .convert-arrow {
+  transition: opacity var(--defaultTransition),
+    transform var(--defaultTransition);
+}

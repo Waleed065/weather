@@ -1,0 +1,33 @@
+#clock-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.clock-flex {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; 
+}
+.clock-flex span {
+  margin-top: 5px;
+  font-size: 2rem;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .clock-flex span {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .clock-flex span {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .clock-flex span {
+    font-size: 1.2rem;
+  }
+}

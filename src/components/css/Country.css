@@ -1,0 +1,25 @@
+#country-button {
+  position: relative;
+
+  height: var(--inputHeight);
+  border-radius: 10px;
+  box-shadow: var(--shadowMain);
+  padding: 0 10px;
+
+  background-color: var(--themeContrast);
+  overflow: hidden;
+  font-size: var(--textSizeNormal);
+
+  flex: none;
+  width: 150px;
+
+  display: inline-flex;
+
+  align-items: center;
+}
+
+@media only screen and (max-width: 450px) {
+  #country-button {
+      width: 100%
+  }
+}

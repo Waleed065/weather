@@ -1,0 +1,23 @@
+.searchoptions-input-options-list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  top: calc(var(--inputHeight) + 10px);
+
+  left: 0;
+  border-radius: 10px;
+  background-color: var(--themeContrast);
+  z-index: 10000;
+
+  box-shadow: var(--shadowMain);
+  
+  max-height: 300px;
+  min-width: 150px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.searchoptions-input-options-list::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,8 @@
+#weather-map-container {
+  margin-top: 10px;
+  position: relative;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadowMain);
+}

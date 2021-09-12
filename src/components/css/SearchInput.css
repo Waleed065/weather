@@ -1,0 +1,8 @@
+#search-input-container {
+  position: relative;
+  flex: 1;
+  max-width: 600px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0 10px
+}

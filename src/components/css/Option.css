@@ -1,0 +1,33 @@
+.option-container {
+  height: 50px;
+  flex: 1;
+  min-width: 120px;
+  box-shadow: var(--shadowMain);
+  border-radius: 10px;
+  background-color: var(--themeContrast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--themeMain);
+  cursor: pointer;
+}
+
+.option-container > span {
+  display: inline-flex;
+  font-size: 20px;
+}
+.option-container > label {
+  margin-left: 5px;
+}
+
+.option-container.option-container-active {
+  background-color: var(--themeMain);
+  color: var(--themeContrast);
+  box-shadow: var(--shadowDark);
+}
+
+@media only screen and (max-width: 1060px) {
+  .option-container {
+    flex: 1.2;
+  }
+}

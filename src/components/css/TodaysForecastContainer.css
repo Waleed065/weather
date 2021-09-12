@@ -1,0 +1,59 @@
+#todays-forecast-container {
+  flex: 1;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#current-temp-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#current-temp-container ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  padding-left: 0;
+  margin-right: 10px;
+}
+
+#current-temp-container li {
+  border-bottom: 1px solid var(--themeMain);
+  padding-bottom: 10px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+#current-temp-container strong {
+  max-width: 65%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#current-temp-container b {
+  color: var(--themeMain);
+}
+
+@media only screen and (max-width: 600px) {
+  #current-temp-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  #current-temp-container ul {
+    width: 100%;
+    margin-left: 10px;
+  }
+}

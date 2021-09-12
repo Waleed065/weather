@@ -1,0 +1,25 @@
+.temp-box {
+  height: 50px;
+  width: 100px;
+
+  margin: 0 10px;
+
+  box-shadow: var(--shadowMain);
+  border-radius: 10px;
+  background-color: var(--themeContrast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--themeMain);
+  cursor: pointer;
+  transition: all var(--defaultTransition);
+}
+
+.temp-box:active {
+  transform: scale(0.95);
+}
+.temp-box.temp-box-active {
+  background-color: var(--themeMain);
+  color: var(--themeContrast);
+  box-shadow: var(--shadowDark);
+}

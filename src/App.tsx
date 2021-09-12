@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import Navigation from "./navigation";
+import ScrollToTop from "./components/ScrollToTop";
+
+// Note: This app is made without using any ui library (eg: bootstrap) and only css for styling to use minimum third party libraries,
+
+// Personally I would prefer to use material ui for ease but here I'm using custom components here
+// Similarly I would have prefer to use material ui (styled) component for styling instead of css
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ScrollToTop />
+
+        <Navigation />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

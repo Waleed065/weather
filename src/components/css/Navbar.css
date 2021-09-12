@@ -1,0 +1,10 @@
+#navbar-container {
+  padding: var(--defaultMargin);
+  background-color: var(--themeMain);
+  height: var(--navbarHeight);
+}
+#navbar-container h2 {
+  margin: 0;
+  text-align: center;
+  color: var(--themeContrast);
+}
