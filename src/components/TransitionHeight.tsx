@@ -57,7 +57,7 @@ export default function TransitionHeight({
           />
 
           <Dots
-            animating={loading}
+            animating={loading ?? false}
             size={50}
             color={"var(--themeMain)"}
             style={{
