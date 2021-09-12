@@ -1,4 +1,4 @@
-import { StateType } from "./../../../.history/src/types/index_20210911053604";
+import { StateType } from './../../types/index';
 import { DispatchType, indexActionType } from "../../types";
 import { setSnackBar } from "./snackBarSlice";
 
