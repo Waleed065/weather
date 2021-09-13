@@ -27,11 +27,11 @@ Open package.json file and update the scripts
     //...
     "scripts": {
       "start": "react-scripts start",
-      -"build": "react-scripts build && rm -rf exports/build && mv build exports",
-      -"push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
+      - "build": "react-scripts build && rm -rf exports/build && mv build exports",
+      - "push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
     },
     "scripts": {
-      "start": "react-scripts start", + "build": "react-scripts build"
+      + "start": "react-scripts start", + "build": "react-scripts build"
     },
     //...
 
