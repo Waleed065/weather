@@ -1,20 +1,34 @@
-import { emptyActionType, stringActionType } from "../../types";
+import {
+  emptyActionType,
+  snackbarStateType,
+  stringActionType,
+} from "../../types";
 
 // ---------------------constants----------------
 const setSnackBarConst = "setSnackBar";
 const clearSnackBarConst = "clearSnackBar";
 
 // ---------------------reducers----------------
+const defaultState = {
+  message: "",
+  show: false,
+};
 
 export default function snackBar(
-  state: string = "",
+  state: snackbarStateType = defaultState,
   action: stringActionType
-): string {
+): snackbarStateType {
   switch (action.type) {
     case setSnackBarConst:
-      return action.payload;
+      return {
+        message: action.payload,
+        show: true,
+      };
     case clearSnackBarConst:
-      return "";
+      return {
+        ...state,
+        show: false,
+      };
     default:
       return state;
   }

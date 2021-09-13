@@ -1,0 +1,58 @@
+#snackbar-container {
+  --snackbar-width: 250px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+
+  position: fixed;
+  bottom: var(--defaultMargin);
+  left: var(--defaultMargin);
+  border-radius: 10px;
+  box-shadow: var(--shadowMain);
+  height: 80px;
+  width: var(--snackbar-width);
+  background-color: var(--themeDark);
+  padding: 10px;
+  color: var(--themeContrast);
+  overflow: auto;
+  z-index: 1000;
+}
+
+/* --------------transition---------------- */
+
+.snackbar-transition-enter,
+.snackbar-transition-appear {
+  opacity: 0.1;
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.snackbar-transition-enter-active,
+.snackbar-transition-appear-active {
+  opacity: 1;
+
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+
+  transition: all var(--defaultTransition) ease-in-out;
+}
+
+.snackbar-transition-exit {
+  opacity: 1;
+
+  -moz-transform: translateX(0%);
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.snackbar-transition-exit-active {
+  opacity: 0.1;
+
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  transition: all var(--defaultTransition) ease-in-out;
+}

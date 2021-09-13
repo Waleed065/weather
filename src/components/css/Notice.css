@@ -1,0 +1,25 @@
+#notice-container {
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+}
+
+#notice-container > p {
+  position: absolute;
+  display: inline-block;
+  margin: 0px;
+  white-space: nowrap;
+  background-color: var(--themeMain);
+  color: var(--themeContrast);
+  animation: scrollBaby 80s linear infinite;
+}
+
+@keyframes scrollBaby {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} ;

@@ -11,6 +11,7 @@ import getCoordsByName from "../../utils/getCoordsByName";
 import getCoordsByZipcode from "../../utils/getCoordsByZipcode";
 import getWeather from "../../utils/getWeather";
 import { setActiveWeatherIndex } from "./activeWeatherIndexSlice";
+import { setLoading } from "./loadingSlice";
 import { setSnackBar } from "./snackBarSlice";
 
 /* --------------constants-------------- */
@@ -106,6 +107,8 @@ export function fetchWeather(query: string) {
   return async (dispatch: DispatchType, getState: () => StateType) => {
     const { alpha2Code, name } = getState().country;
 
+    dispatch(setLoading(true));
+
     try {
       let getCoords;
       if (/^\d+$/.test(query)) getCoords = getCoordsByZipcode;
@@ -119,6 +122,8 @@ export function fetchWeather(query: string) {
       try {
         const response = await getWeather({ lat, lon });
         batch(() => {
+          dispatch(setLoading(false));
+
           dispatch(setActiveWeatherIndex(0));
           dispatch(
             setWeather({
@@ -128,17 +133,24 @@ export function fetchWeather(query: string) {
               countryCode: alpha2Code,
             })
           );
+          dispatch(setSnackBar(`You're now viewing forecast for ${city}`));
         });
       } catch (err) {
+        batch(() => {
+          dispatch(setSnackBar("Unable to fetch forecast at the moment! 😕"));
+          dispatch(setLoading(false));
+        });
 
-        
-        return dispatch(
-          setSnackBar("Error fetching weather at the moment! 😕")
-        );
+        return;
       }
     } catch (err) {
-
-      return dispatch(setSnackBar("Error fetching weather at the moment! 😕"));
+      batch(() => {
+        dispatch(
+          setSnackBar(`Unable to search for ${name}. Try something else!`)
+        );
+        dispatch(setLoading(false));
+      });
+      return;
     }
   };
 }

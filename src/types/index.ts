@@ -20,6 +20,11 @@ export type stringActionType = {
 export type emptyActionType = {
   type: string;
 };
+// ---------------------->snackbar<--------------------
+export type snackbarStateType = {
+  message: string;
+  show: boolean
+};
 
 // ---------------------->sidebarSettings<--------------------
 export type sidebarSettingsStateType = {

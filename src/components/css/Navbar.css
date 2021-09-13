@@ -1,5 +1,4 @@
 #navbar-container {
-  padding: var(--defaultMargin);
   background-color: var(--themeMain);
   height: var(--navbarHeight);
 }

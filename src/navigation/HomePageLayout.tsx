@@ -1,37 +1,19 @@
 import React from "react";
 import { Outlet } from "react-router";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import Overlay from "../components/Overlay";
+import Snackbar from "../components/Snackbar";
 
 export default function HomePageLayout() {
   return (
     <>
-      <main>
-        <Navbar />
-        <Outlet />
-      </main>
-      <footer style={footerStyle}>
-        <h3>
-          All rights reserved. Made By{" "}
-          <a
-            href="https://waleed-portfolio.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            funkaarts
-          </a>
-        </h3>
-      </footer>
+      <Navbar />
+      <Outlet />
+
+      <Footer />
+      <Snackbar />
+      <Overlay />
     </>
   );
 }
-
-const footerStyle = {
-  marginTop: 10,
-  textAlign: "center" as any,
-  height: 50,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  backgroundColor: "var(--themeMain)",
-  color: "#fff",
-};

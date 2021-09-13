@@ -26,7 +26,7 @@ const action = (payload: number): indexActionType => ({
   payload,
 });
 
-export function setActiveWeatherIndex(payload: number) {
+export function setActiveWeatherIndex(payload: number):any {
   return (dispatch: DispatchType, getState: () => StateType) => {
     const dailyWeatherLength = getState().weather.daily?.length - 1;
 
