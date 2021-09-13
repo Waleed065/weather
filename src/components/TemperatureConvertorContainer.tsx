@@ -65,13 +65,14 @@ export default function TemperatureConvertorContainer() {
     wind_gust,
     wind_speed,
     dew_point,
-    visibility,
     uvi,
-    rain,
     country,
     city,
+    clouds,
+    pop
   } = useSelector(getActiveWeather);
-  const temp = useSelector((state: StateType) => state.weather.current.temp);
+  const weather = useSelector((state: StateType) => state.weather);
+  const temp = weather.current.temp
   const [activeOption, setActiveOption] = useState({
     title: options[0].title,
     index: 0,
@@ -83,6 +84,7 @@ export default function TemperatureConvertorContainer() {
       index,
     });
   }, []);
+
 
   const details: detailsType = {
     [sun_rise]: [
@@ -137,8 +139,8 @@ export default function TemperatureConvertorContainer() {
         title: `${dew_point} °C`,
       },
       {
-        heading: "Visibility",
-        title: `${visibility} km`,
+        heading: "Cloudiness",
+        title: `${clouds}%`,
       },
     ],
     [atom_pressure]: [
@@ -151,8 +153,8 @@ export default function TemperatureConvertorContainer() {
         title: `${uvi}`,
       },
       {
-        heading: "Rain",
-        title: `${rain}%`,
+        heading: "Probability Of Rain",
+        title: `${(pop * 100).toFixed(0)}%`,
       },
     ],
   };

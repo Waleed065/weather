@@ -23,7 +23,7 @@ export type emptyActionType = {
 // ---------------------->snackbar<--------------------
 export type snackbarStateType = {
   message: string;
-  show: boolean
+  show: boolean;
 };
 
 // ---------------------->sidebarSettings<--------------------
@@ -57,12 +57,12 @@ type currentWeatherType = {
   wind_gust: number;
   wind_speed: number;
 };
-export interface dailyWeatherType extends Omit<currentWeatherType, "temp"> {
+export interface dailyWeatherType
+  extends Omit<currentWeatherType, "temp" | "visibility"> {
   moon_phase: number;
   moonrise: number;
   moonset: number;
   pop: number;
-  rain: number;
 
   temp: {
     day: number;

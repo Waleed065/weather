@@ -15,13 +15,12 @@ export default function SearchInput() {
 
   const onSubmit = async (e: any, val: string) => {
     e?.preventDefault();
-    if (!value.length) return;
+
+    if (!val.length) return;
 
     dispatch(fetchWeather(val));
     setShouldShow(false);
   };
-
-
 
   return (
     <form
@@ -36,7 +35,7 @@ export default function SearchInput() {
         placeholder="Search a city by name or zipcode..."
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        onFocus={() => setShouldShow(true)}
+        onClick={() => setShouldShow(true)}
       />
 
       <Places

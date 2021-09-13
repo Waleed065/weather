@@ -146,7 +146,7 @@ export function fetchWeather(query: string) {
     } catch (err) {
       batch(() => {
         dispatch(
-          setSnackBar(`Unable to search for ${name}. Try something else!`)
+          setSnackBar(`Unable to search for ${query}. Try something else!`)
         );
         dispatch(setLoading(false));
       });

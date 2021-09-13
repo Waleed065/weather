@@ -5,6 +5,7 @@ import { store } from "./store";
 import Navigation from "./navigation";
 import ScrollToTop from "./components/ScrollToTop";
 
+
 // Note: This app is made without using any ui library (eg: bootstrap) and only css for styling to use minimum third party libraries,
 
 // Personally I would prefer to use material ui for ease but here I'm using custom components here
