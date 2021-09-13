@@ -1,6 +1,6 @@
 import React, { useRef} from "react";
 import Dots from "react-activity/dist/Dots";
-import "./css/Navbar.css";
+import "./css/OverLay.css";
 
 import { CSSTransition } from "react-transition-group";
 import { useSelector } from "react-redux";

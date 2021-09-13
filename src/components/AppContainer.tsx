@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import "./css/AppContainer.css";
 import CloudsContainer from "./CloudsContainer";
 import ForecastContainer from "./ForecastContainer";
