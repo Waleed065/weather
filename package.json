@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "push": "git add . && git commit -m 'version 1' && git push -u origin master"
+    "build": "react-scripts build && mv build exports",
+    "push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
   },
   "description": "Get the forecast for today, tonight & tomorrow's weather for any city. Hi/Low, RealFeel®, precip, radar, & everything you need to be ready for the day, commute, and weekend!",
   "repository": {

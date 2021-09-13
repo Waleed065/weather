@@ -24,11 +24,11 @@ const WeatherMap = ({ layer }: schema) => {
         zoomControl={true}
       >
         <LayersControl position="topright">
-          <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
+          <LayersControl.BaseLayer checked name="Map">
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
           </LayersControl.BaseLayer>
 
-          <LayersControl.Overlay checked name="OpenStreetMap.Mapnik">
+          <LayersControl.Overlay checked name="Show Weather Layer">
             <TileLayer
               url={`https://tile.openweathermap.org/map/${layer}/{z}/{x}/{y}.png?appid=${weatherApi}`}
             />
