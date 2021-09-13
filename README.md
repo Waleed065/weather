@@ -24,8 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Open package.json file and update the scripts
 
-  //package.json
-  ...
+  //...
   "scripts": {
     "start": "react-scripts start",
     -"build": "react-scripts build && rm -rf exports/build && mv build exports",
@@ -35,7 +34,7 @@ Open package.json file and update the scripts
   "scripts": {
     "start": "react-scripts start", + "build": "react-scripts build"
   },
-  ...
+  //...
 
 ### `yarn build`
 
