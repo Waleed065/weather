@@ -71,5 +71,5 @@
   "engines": {
     "node": ">=0.16"
   },
-  "license" : "MIT license" 
+  "license" : "MIT" 
 }
