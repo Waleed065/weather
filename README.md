@@ -24,18 +24,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Open package.json file and update the scripts
 
-//package.json
-...
-"scripts": {
-  "start": "react-scripts start",
-  -"build": "react-scripts build && rm -rf exports/build && mv build exports",
-  -"push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
-},
+  //package.json
+  ...
+  "scripts": {
+    "start": "react-scripts start",
+    -"build": "react-scripts build && rm -rf exports/build && mv build exports",
+    -"push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
+  },
 
-"scripts": {
-  "start": "react-scripts start", + "build": "react-scripts build"
-},
-...
+  "scripts": {
+    "start": "react-scripts start", + "build": "react-scripts build"
+  },
+  ...
 
 ### `yarn build`
 
