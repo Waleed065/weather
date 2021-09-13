@@ -13,11 +13,12 @@ export default function Snackbar() {
 
   const timer = useRef<any>(null);
   useEffect(() => {
+    clearTimeout(timer.current);
+
     if (!show) return;
     let mounted = true;
     if (!mounted) return;
 
-    clearTimeout(timer.current);
     timer.current = setTimeout(() => {
       hideSnack();
     }, 5000);
