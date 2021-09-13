@@ -4,11 +4,10 @@ This project is a weather application made with react. It uses [open weather api
 
 ## Steps To Install
 
-In the **.env.local** file add your query strings
+Create a **.env.local** file at the root folder and add your query strings
 
-    //env.local file
     REACT_APP_WEATHER_API = **your weather api key from openweatherapi.com**
-    REACT_APP_GOOGLE_MAP_API = -your google places api key for search-
+    REACT_APP_GOOGLE_MAP_API = **your google places api key for search**
 
 After that in the project directory, you can run:
 
@@ -20,6 +19,23 @@ This will install the required dependencies
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Build Instruction
+
+Open package.json file and update the scripts
+
+//package.json
+...
+"scripts": {
+  "start": "react-scripts start",
+  -"build": "react-scripts build && rm -rf exports/build && mv build exports",
+  -"push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
+},
+
+"scripts": {
+  "start": "react-scripts start", + "build": "react-scripts build"
+},
+...
 
 ### `yarn build`
 
@@ -45,8 +61,9 @@ This project uses react to build the front end logic of the app.
 - This project is a responsive web app.
 
 - This project can search for weather data for any location the user wants to search either by.
-    - City Name
-    - City Zipcode
+
+  - City Name
+  - City Zipcode
 
 - Shows the 7 Day forecast for the current location selected.
 
@@ -55,11 +72,11 @@ This project uses react to build the front end logic of the app.
 - Uses the OpenWeatherAPI to show a weather map for the current location for the Clouds, Precipitation and Temperature.
 
 - Displays following information about the weather condition.
-    - Location
-    - Current weather description (i.e. sunny, cloudy, etc)
-    - Current temperature
-    - High/low temperature
-    - Wind Speed
-    - Humidity
-    - Pressure
-    - Sunrise/Sunset Time
+  - Location
+  - Current weather description (i.e. sunny, cloudy, etc)
+  - Current temperature
+  - High/low temperature
+  - Wind Speed
+  - Humidity
+  - Pressure
+  - Sunrise/Sunset Time
