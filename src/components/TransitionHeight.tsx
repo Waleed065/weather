@@ -32,42 +32,44 @@ export default function TransitionHeight({
   const optionsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <CSSTransition
-      in={shouldShow}
-      classNames={"global-transition-height"}
-      nodeRef={optionsRef}
-      timeout={300}
-      unmountOnExit
-    >
-      <div
-        ref={optionsRef}
-        className={"searchoptions-input-options-list global-no-select"}
-        style={optionsContainerStyle}
+    <>
+      <CSSTransition
+        in={shouldShow}
+        classNames={"global-transition-height"}
+        nodeRef={optionsRef}
+        timeout={300}
+        unmountOnExit
       >
-        <OptionsList
-          searchOptionsRef={searchOptionsRef}
-          shouldShow={shouldShow}
-          setShouldShow={setShouldShow}
-          onSelect={onSelect}
-          options={options}
-          itemTitle={itemTitle}
-          itemIcon={itemIcon}
-          optionsIcon={optionsIcon}
-        />
+        <div
+          ref={optionsRef}
+          className={"searchoptions-input-options-list global-no-select"}
+          style={optionsContainerStyle}
+        >
+          <OptionsList
+            searchOptionsRef={searchOptionsRef}
+            shouldShow={shouldShow}
+            setShouldShow={setShouldShow}
+            onSelect={onSelect}
+            options={options}
+            itemTitle={itemTitle}
+            itemIcon={itemIcon}
+            optionsIcon={optionsIcon}
+          />
 
-        <Dots
-          animating={loading ?? false}
-          size={50}
-          color={"var(--themeMain)"}
-          style={{
-            zIndex: 12,
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-          }}
-        />
-      </div>
-    </CSSTransition>
+          <Dots
+            animating={loading ?? false}
+            size={50}
+            color={"var(--themeMain)"}
+            style={{
+              zIndex: 12,
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+        </div>
+      </CSSTransition>
+    </>
   );
 }

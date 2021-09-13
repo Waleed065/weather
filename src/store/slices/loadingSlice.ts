@@ -5,7 +5,7 @@ const setLoadingConst = "setLoading";
 // ---------------------reducers----------------
 
 export default function isCelsiusSlice(
-  state: boolean = true,
+  state: boolean = false,
   action: booleanActionType
 ): boolean {
   switch (action.type) {

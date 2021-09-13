@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "react-activity/dist/Dots.css";
-// import 'leaflet/dist/leaflet.css';
 import "./index.css";
 
 import App from "./App";

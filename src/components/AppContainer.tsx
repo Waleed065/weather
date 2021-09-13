@@ -9,7 +9,6 @@ export default function AppContainer() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchWeather("islamabad"));
-
     // eslint-disable-next-line
   }, []);
   return (

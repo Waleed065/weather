@@ -23,7 +23,7 @@ export default function Country() {
       <div
         className="global-button"
         id={"country-button"}
-        onClick={() => setShouldShow(true)}
+        onClick={() => setShouldShow(!shouldShow)}
       >
         <label>
           {emoji} {name}

@@ -1,13 +1,6 @@
 import { useEffect, useRef } from "react";
-// import { geocodeByPlaceId } from "react-places-autocomplete";
-import Geocode from "react-geocode";
 import { useSelector } from "react-redux";
 import { StateType } from "../types";
-
-const key = process.env.REACT_APP_GOOGLE_MAP_API as string;
-
-Geocode.setApiKey(key);
-Geocode.setLanguage("en");
 
 declare const window: any;
 
@@ -48,13 +41,12 @@ export default function usePlaces({
   const throttle = useRef<any>(null);
   useEffect(() => {
     if (value.length === 0 || /^\d+$/.test(value)) {
-      setLoading(false)
+      setLoading(false);
       return;
-    };
+    }
 
     clearTimeout(throttle.current);
     throttle.current = setTimeout(() => {
-      setLoading(true);
       fetchPredictions(value);
     }, 800);
 
@@ -65,14 +57,15 @@ export default function usePlaces({
   }, [value]);
 
   const autocompleteCallback = (predictions: any, status: any) => {
-    setLoading(false)
+    setLoading(false);
 
     if (status !== autocompleteOK.current) {
       console.error(
         "[react-places-autocomplete]: error happened when fetching data from Google Maps API.\nPlease check the docs here (https://developers.google.com/maps/documentation/javascript/places#place_details_responses)\nStatus: ",
         status
       );
-      return setSuggestions([]);
+      setSuggestions([]);
+      return;
     }
 
     setSuggestions(
@@ -85,84 +78,18 @@ export default function usePlaces({
 
   const fetchPredictions = (input: string) => {
     if (value.length) {
+      setLoading(true);
+
       autocompleteService.current.getPlacePredictions(
         {
           types: ["(cities)"],
           componentRestrictions: {
             country: countryCode,
           },
-
           input,
         },
         autocompleteCallback
       );
     }
   };
-
-  // const success = (pos: any) => {
-  //   const { latitude, longitude } = pos.coords;
-
-  //   Geocode.fromLatLng(latitude, longitude).then(
-  //     (response) => {
-  //       const address = response.results[0].formatted_address;
-  //       // dispatch(
-  //       //   setLocation({
-  //       //     lat: latitude,
-  //       //     lng: longitude,
-  //       //     address,
-  //       //   })
-  //       // );
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //       // dispatch(
-  //       //   setLocation({
-  //       //     lat: latitude,
-  //       //     lng: longitude,
-  //       //     address: "",
-  //       //   })
-  //       // );
-  //     }
-  //   );
-  // };
-  // const getCurrentLocation = async () => {
-  //   if (navigator.geolocation) {
-  //     navigator.permissions.query({ name: "geolocation" }).then((result) => {
-  //       if (result.state === "granted" || result.state === "prompt") {
-  //         navigator.geolocation.getCurrentPosition(
-  //           success,
-  //           (err) => {
-  //             console.warn(`ERROR(${err.code}): ${err.message}`);
-  //           },
-  //           options
-  //         );
-  //       } else if (result.state === "denied") {
-  //         //   dispatch(setSnackBar("Permission denied!"));
-  //       }
-  //       result.onchange = () => {
-  //         console.log(result.state);
-  //       };
-  //     });
-  //   } else {
-  //     alert("Sorry Not available!");
-  //   }
-  // };
-
-  // const handleSelect = (suggestion: any) => {
-  //   setValue("");
-  //   setSuggestions([]);
-
-  //   geocodeByPlaceId(suggestion.placeId)
-  //     .then((results) => {
-  //       const { lat, lng } = results[0].geometry.location;
-  //       // dispatch(
-  //       //   setLocation({
-  //       //     lat: lat(),
-  //       //     lng: lng(),
-  //       //     address: suggestion.description,
-  //       //   })
-  //       // );
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
 }
