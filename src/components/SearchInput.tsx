@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
-import "./css/SearchInput.css";
-
-import Places from "./Places";
+import { MdSearch } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { fetchWeather } from "../store/slices/weatherSlice";
-import { MdSearch } from "react-icons/md";
+import "./css/SearchInput.css";
+import Places from "./Places";
+
 
 export default function SearchInput() {
   const [shouldShow, setShouldShow] = useState(false);

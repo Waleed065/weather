@@ -27,7 +27,6 @@ export default function Places({
   usePlaces({ value,  setSuggestions, setLoading });
 
   const onSelect = (val: suggestionType) => {
-    setShouldShow(false);
     setSuggestions([]);
     onSubmit(null, val.city);
   };

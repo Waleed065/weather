@@ -16,7 +16,6 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <ScrollToTop />
-
         <Navigation />
       </BrowserRouter>
     </Provider>

@@ -6,14 +6,14 @@ import { home } from "../constants/routesConst";
 import HomeRoute from "../routes";
 import HomePageLayout from "./HomePageLayout";
 
-export default function index() {
+export default function Navigation() {
   return (
     <>
       <Routes>
         <Route path={home} element={<HomePageLayout />}>
           <Route path={home} element={<HomeRoute />} />
 
-          <Route path={"*"} element={<Navigate to={home} />} />
+          {/* <Route path={"*"} element={<Navigate to={home} />} /> */}
         </Route>
       </Routes>
       <Overlay />

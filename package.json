@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf exports/build && mv build exports",
-    "push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd .."
+    "push": "yarn build && git add . && git commit -m 'version 1' && git push -u origin master && cd exports && git add . && git commit -m 'version 1' && git push -u origin master && cd ..",
+    "test": "react-scripts test"
   },
   "description": "Get the forecast for today, tonight & tomorrow's weather for any city. Hi/Low, RealFeel®, precip, radar, & everything you need to be ready for the day, commute, and weekend!",
   "repository": {
@@ -67,7 +68,12 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/react-transition-group": "^4.4.2",
     "remove": "^0.1.5",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6"
+
   },
   "engines": {
     "node": ">=0.16"
